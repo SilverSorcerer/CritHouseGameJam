@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GolemHandBehavior : MonoBehaviour
 {
+    #region //Variable Declarations
     //Variable to enable debugging this script
     bool debugMode = false;
 
@@ -29,7 +30,7 @@ public class GolemHandBehavior : MonoBehaviour
     public float cornerMovementSpeed = 7.0f;
 
     Vector2 travelDirection = new Vector2();
-
+    #endregion
 
     // Start is called before the first frame update
     void Start()
