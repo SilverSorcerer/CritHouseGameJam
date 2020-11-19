@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 218571624}
   - component: {fileID: 218571623}
   m_Layer: 0
-  m_Name: GolemHand_Left (1)
+  m_Name: GolemHand_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08749158122d2e6479e00e2eb5dcfae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  playerObject: {fileID: 581364880}
+  GameManagerObj: {fileID: 1282366328}
+  myShadow: {fileID: 1734840831}
   handHealth: 100
-  speedModifier: 0.3
-  cornerMovementSpeed: 7
+  isLeft: 0
+  distanceFromShadow: 1
 --- !u!50 &218571624
 Rigidbody2D:
   serializedVersion: 4
@@ -236,11 +236,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218571622}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.000001952052}
-  m_LocalPosition: {x: 5.66, y: 0.61700004, z: 0}
+  m_LocalPosition: {x: 5.7, y: 0.17, z: 0}
   m_LocalScale: {x: -0.8, y: 0.7, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.00002}
 --- !u!1 &519420028
 GameObject:
@@ -450,12 +450,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581364880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.57, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826288144
 GameObject:
@@ -534,11 +534,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826288144}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.000001952052}
-  m_LocalPosition: {x: -5.821, y: 0.425, z: 0}
+  m_LocalPosition: {x: -5.821, y: 0.42499948, z: 0}
   m_LocalScale: {x: 0.8, y: 0.7, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.00002}
 --- !u!114 &826288147
 MonoBehaviour:
@@ -552,11 +552,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08749158122d2e6479e00e2eb5dcfae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  playerObject: {fileID: 581364880}
+  GameManagerObj: {fileID: 1282366328}
+  myShadow: {fileID: 2028512087}
   handHealth: 100
-  speedModifier: 0.3
-  cornerMovementSpeed: 7
+  isLeft: 1
+  distanceFromShadow: 1
 --- !u!50 &826288148
 Rigidbody2D:
   serializedVersion: 4
@@ -578,6 +578,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1282366328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282366330}
+  - component: {fileID: 1282366329}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1282366329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282366328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3db1ab6a82d3554aa83f0184995355e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFloor: 0
+--- !u!4 &1282366330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282366328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.4405985, y: 0.3300994, z: -0.226239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1734840831
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,8 +632,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1734840833}
   - component: {fileID: 1734840832}
+  - component: {fileID: 1734840834}
+  - component: {fileID: 1734840835}
   m_Layer: 0
-  m_Name: hand shadow (1)
+  m_Name: GolemHandShadow_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,13 +698,51 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734840831}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 5.66, y: -1.54, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 5.04, y: -1.38, z: 1}
   m_LocalScale: {x: -0.8, y: 0.7, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &1734840834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734840831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293c693be9d6740448960c4d358fe186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManagerObj: {fileID: 1282366328}
+  playerObject: {fileID: 581364880}
+  isActive: 1
+  speedModifier: 0.3
+  cornerMovementSpeed: 7
+--- !u!50 &1734840835
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734840831}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2028512087
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,8 +753,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2028512089}
   - component: {fileID: 2028512088}
+  - component: {fileID: 2028512090}
+  - component: {fileID: 2028512091}
   m_Layer: 0
-  m_Name: hand shadow
+  m_Name: GolemHandShadow_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,10 +819,48 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028512087}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -5.821, y: -1.732, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -5.821, y: -1.7319999, z: 1}
   m_LocalScale: {x: 0.8, y: 0.7, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &2028512090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028512087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293c693be9d6740448960c4d358fe186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManagerObj: {fileID: 1282366328}
+  playerObject: {fileID: 581364880}
+  isActive: 1
+  speedModifier: 0.3
+  cornerMovementSpeed: 7
+--- !u!50 &2028512091
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028512087}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
