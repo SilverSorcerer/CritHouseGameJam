@@ -19,9 +19,6 @@ public class GolemHandShadowBehavior : MonoBehaviour
     //A reference to the player's gameObject, used to track its position and chase the player
     public GameObject playerObject = null;
 
-    //The amount of health points the hand posesses
-    public int handHealth = 100;
-
     //general modifier to how fast the hand can move
     public float speedModifier = 0.3f;
 
